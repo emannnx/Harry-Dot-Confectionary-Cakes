@@ -64,9 +64,11 @@ export const Navbar: React.FC = () => {
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-background animate-pulse" />
                 )}
               </div>
-              <div className="hidden sm:block">
-                <h1 className="font-serif text-2xl font-bold text-foreground">Harry-dot</h1>
-                <p className="text-xs text-muted-foreground tracking-wider uppercase">Confectionery</p>
+              <div>
+                <h1 className="font-roboto text-2xl font-black text-foreground">Harry-dot</h1>
+                <p className="font-poppins text-xs text-muted-foreground tracking-wider uppercase">
+                  Confectionery & Cakes
+                </p>
               </div>
             </Link>
 
@@ -103,7 +105,7 @@ export const Navbar: React.FC = () => {
             {/* Actions */}
             <div className="flex items-center gap-3">
               {isAdmin ? (
-                <Button variant="ghost" size="sm" onClick={logout} className="hidden md:flex">
+                <Button variant="ghost" size="sm" className="hidden md:flex" onClick={logout}>
                   <LogOut className="w-4 h-4 mr-2" />
                   Logout
                 </Button>
