@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Lato', 'sans-serif'],
         serif: ['Cormorant Garamond', 'serif'],
+        roboto: ["Roboto", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
