@@ -24,20 +24,23 @@ export const CakeDetailsModal: React.FC<CakeDetailsModalProps> = ({ cake, onClos
     <AnimatePresence>
       {cake && (
         <>
+          {/* Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
             onClick={onClose}
           />
+
+          {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-3xl max-h-[90vh] overflow-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
-            <div className="card-elevated mx-4 overflow-hidden">
+            <div className="card-elevated w-full max-w-3xl max-h-[90vh] overflow-auto">
               <div className="grid md:grid-cols-2">
                 {/* Image */}
                 <div className="relative aspect-square md:aspect-auto">
