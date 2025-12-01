@@ -62,6 +62,7 @@ export const PinModal: React.FC<PinModalProps> = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Background Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -69,13 +70,15 @@ export const PinModal: React.FC<PinModalProps> = ({ isOpen, onClose }) => {
             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50"
             onClick={handleClose}
           />
+
+          {/* Centered Modal Container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md"
+            className="fixed inset-0 flex justify-center items-center z-50"
           >
-            <div className="card-elevated p-8 mx-4">
+            <div className="card-elevated p-8 w-full max-w-md mx-4">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -86,6 +89,7 @@ export const PinModal: React.FC<PinModalProps> = ({ isOpen, onClose }) => {
                     <p className="text-sm text-foreground/60">Enter PIN to continue</p>
                   </div>
                 </div>
+
                 <button
                   onClick={handleClose}
                   className="p-2 rounded-lg hover:bg-card transition-colors"
